@@ -1,10 +1,10 @@
-##Problem: Connection interruption will break idempotent file route
+## Problem: Connection interruption will break idempotent file route
 
-###Prerequisites
+### Prerequisites
 Start redis container.  
-``docker run -p 6379:6379 -d redis:4.0``
+`docker run -p 6379:6379 -d redis:4.0`
 
-###Test
+### Test
 - Execute createFiles.sh  
 This will create the folder structure with 500 files in each folder.
 - Start spring boot app
@@ -21,4 +21,4 @@ org.springframework.data.redis.RedisConnectionFailureException: java.net.SocketT
 - Then add new files to the folders with:  
 `./addMoreFiles.sh`
 - The script has created 4 more files, 1 in each folder.  
-At this point, files are being copied that should not be copied anymore because they are member of the key `key1`. And it keeps copying in an endless loop.
+At this point, **files are being copied that should not be copied anymore** because they are member of the key `key1`. And it keeps copying in an endless loop.
