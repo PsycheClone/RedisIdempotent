@@ -1,4 +1,4 @@
-## Problem: Connection interruption will break idempotent file route
+## Problem: Connection interruption will break idempotent file route with REDIS
 
 ### Prerequisites
 Start redis container.  
